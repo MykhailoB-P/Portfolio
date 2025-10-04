@@ -1,0 +1,69 @@
+/* Live Background for About Page */
+.about {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(-45deg, #007BFF, #00CFFF, #FF6B6B, #FFD93D);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    flex-direction: column;
+    text-align: center;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Boxes Layout */
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.box {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Icons in Box 2 */
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.icons img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.icons img:hover {
+    transform: scale(1.5);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .boxes {
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>About Me - Portfolio</title>
+
+    <!-- Общие стили -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Стили для About страницы -->
+    <link rel="stylesheet" href="css/about.css">
+
+    <!-- AOS Animation CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -17,10 +24,40 @@
     </nav>
 
     <section class="about">
-        <h2>About Me</h2>
-        <p>My title, specialties, and tools will go here.</p>
+        <h2 data-aos="fade-down">About Me</h2>
+        <div class="boxes">
+            <!-- Box 1: What I Study -->
+            <div class="box" data-aos="fade-up">
+                <h3>What I Study</h3>
+                <p>IT Management, Cybersecurity, Networking, Cloud Computing</p>
+            </div>
+
+            <!-- Box 2: Tools -->
+            <div class="box" data-aos="fade-up" data-aos-delay="100">
+                <h3>Tools I Use</h3>
+                <div class="icons">
+                    <img src="images/html.png" alt="HTML">
+                    <img src="images/css.png" alt="CSS">
+                    <img src="images/js.png" alt="JavaScript">
+                    <img src="images/github.png" alt="GitHub">
+                </div>
+            </div>
+
+            <!-- Box 3: Projects -->
+            <div class="box" data-aos="fade-up" data-aos-delay="200">
+                <h3>Projects</h3>
+                <p>I’ve worked on several projects. <a href="projects.html">See them here</a>.</p>
+            </div>
+        </div>
     </section>
 
-    <script src="js/script.js"></script>
+    <!-- AOS Animation JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true
+      });
+    </script>
 </body>
 </html>
