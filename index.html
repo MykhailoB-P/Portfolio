@@ -1,30 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio - Welcome</title>
-    <link rel="stylesheet" href="css/style.css"> <!-- Общие стили -->
-    <link rel="stylesheet" href="css/welcome.css"> <!-- Только для welcome page -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome - My Portfolio</title>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
+
+  <!-- AOS Animation -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Hi, I'm Mykhailo</h1>
-            <p>Final-year IT Management & Cybersecurity student at Munster Technological University, Cork.</p>
-            <p>Passionate about technology, learning, and creating impactful projects.</p>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero section with animated background -->
+  <section class="hero">
+    <div class="hero-content" data-aos="fade-down">
+      <h1>Hi, I'm Mykhailo</h1>
+      <p>Final-year IT Management & Cybersecurity student at MTU, Cork.</p>
+    </div>
+  </section>
+
+  <!-- About box with pages -->
+  <section class="about-box" data-aos="fade-up">
+    <div class="page-container">
+      <!-- Page 1: About Me -->
+      <div class="page" id="page1">
+        <h2>About Me</h2>
+        <div class="scrollable-content">
+          <p>I have been studying IT Management and Cybersecurity, gaining knowledge in network security, cloud computing, and project management.</p>
+          <p>Passionate about creating practical IT solutions, learning new technologies, and contributing to real-world projects.</p>
+          <p>I am actively building projects to develop skills in coding, virtualization, and IT infrastructure management.</p>
+          <p>Always eager to collaborate, learn, and apply knowledge in professional environments.</p>
         </div>
-    </section>
+      </div>
 
-    <script src="js/script.js"></script>
+      <!-- Page 2: My Goals -->
+      <div class="page" id="page2">
+        <h2>My Goals</h2>
+        <div class="scrollable-content">
+          <p>My aim is to secure an internship or role in IT support, system administration, or cybersecurity.</p>
+          <p>I plan to continue expanding my skills in networking, cloud solutions, and cybersecurity best practices.</p>
+          <p>Interested in applying my academic knowledge to practical challenges and gaining real industry experience.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right arrow control -->
+    <div class="page-controls">
+      <button id="next">&#10095;</button> <!-- Right arrow -->
+    </div>
+  </section>
+
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+
+  <!-- External JS -->
+  <script src="js/script.js"></script>
 </body>
 </html>

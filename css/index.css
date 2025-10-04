@@ -1,0 +1,136 @@
+/* Body and navigation */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(0,0,0,0.5);
+    margin: 0;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Hero section with animated gradient */
+  .hero {
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(-45deg, #007BFF, #00CFFF, #FF6B6B, #FFD93D);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #fff;
+  }
+  
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* About box container */
+  .about-box {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    position: relative;
+  }
+  
+  /* Page container for animation */
+  .page-container {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+  }
+  
+  /* Individual pages */
+  .page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-right: 0.5rem;
+    overflow-y: auto;
+    line-height: 1.6;
+    background: rgba(0,0,0,0.6);
+    border-radius: 15px;
+    color: #fff;
+    z-index: 0;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+  
+  /* Active page */
+  .page.active {
+    opacity: 1;
+    z-index: 1;
+    transform: translateX(0);
+  }
+  
+  /* Previous and next states for animation */
+  .page.prev {
+    transform: translateX(-100%);
+  }
+  
+  .page.next {
+    transform: translateX(100%);
+  }
+  
+  /* Scrollable content styling */
+  .scrollable-content::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .scrollable-content::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 4px;
+  }
+  
+  .scrollable-content p {
+    margin-bottom: 1rem;
+  }
+  
+  /* Right arrow only */
+  .page-controls {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    pointer-events: all;
+  }
+  
+  .page-controls button {
+    background: rgba(255,255,255,0.3);
+    border: none;
+    color: #000;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  .page-controls button:hover {
+    background: rgba(255,255,255,0.6);
+    transform: scale(1.2);
+  }
+  
+  /* Responsive */
+  @media (max-width: 900px) {
+    .about-box {
+      width: 90%;
+    }
+  }
+  
