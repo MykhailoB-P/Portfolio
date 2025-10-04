@@ -76,6 +76,27 @@
     text-align: center;
 }
 
+.study-list {
+    list-style: none; /* Убираем стандартные буллеты */
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.study-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #fff;
+}
+
+.study-list .icon {
+    margin-right: 0.6rem;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
     .boxes {
