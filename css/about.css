@@ -42,22 +42,38 @@
 }
 
 /* Icons in Box 2 */
-.icons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+.icons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
     margin-top: 1rem;
 }
 
-.icons img {
+.icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.icon-item img {
     width: 50px;
     height: 50px;
     transition: transform 0.3s ease;
     cursor: pointer;
 }
 
-.icons img:hover {
+.icon-item img:hover {
     transform: scale(1.5);
+}
+
+.icon-item span {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
 }
 
 /* Responsive */
