@@ -1,26 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-    <section class="contact">
-        <h2>Contact Me</h2>
-        <p>Form and social links will go here.</p>
-    </section>
+  <section class="contact-box" data-aos="fade-up">
+    <h2>Contact Me</h2>
 
-    <script src="js/script.js"></script>
+    <div class="contact-grid">
+      <!-- Social Media Column -->
+      <div class="contact-column social">
+        <h3>Social</h3>
+        <a href="https://github.com/MykhailoB-P" target="_blank" class="contact-icon">
+          <img src="images/github.png" alt="GitHub">
+        </a>
+        <a href="https://www.linkedin.com/in/mykhailo-budonnyi-79399323a/" target="_blank" class="contact-icon">
+          <img src="images/linkedin.png" alt="LinkedIn">
+        </a>
+      </div>
+
+      <!-- Personal Contact Column -->
+      <div class="contact-column personal">
+        <h3>Contacts</h3>
+        <div class="contact-item">
+          <img src="images/phone.png" alt="Phone" class="contact-icon clickable">
+          <span class="contact-text">+353 123 456 789</span>
+        </div>
+        <div class="contact-item">
+          <img src="images/gmail.png" alt="Email" class="contact-icon clickable">
+          <span class="contact-text">mykhailo@example.com</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/script.js"></script>
 </body>
 </html>

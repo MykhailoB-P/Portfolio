@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <nav>
@@ -16,10 +17,48 @@
         </ul>
     </nav>
 
-    <section class="projects">
+    <section class="projects-box" data-aos="fade-up">
         <h2>My Projects</h2>
-        <p>Projects will be displayed here.</p>
-    </section>
+      
+        <!-- Project 1: Real project -->
+        <div class="project">
+          <div class="project-header">
+            <a href="#" class="pdf-link-icon" target="_blank">
+              <img src="images/pdf.png" alt="PDF" class="project-icon">
+            </a>
+            <img src="images/project1-screenshot.png" alt="Project Screenshot" class="project-thumb">
+            <h3>Internet & Network Services Project (2024)</h3>
+            <button class="toggle-btn">View Details</button>
+          </div>
+          <div class="project-details">
+            <ul>
+              <li>Configured and secured Linux servers (Apache, MySQL, PHP) with SSH hardening, reducing vulnerability exposure by ~35%.</li>
+              <li>Built and deployed a Moodle web platform in a virtualised environment.</li>
+            </ul>
+            <a href="#" target="_blank" class="pdf-link">Open PDF</a>
+          </div>
+        </div>
+      
+        <!-- Project 2: Random example -->
+        <div class="project">
+          <div class="project-header">
+            <a href="#" class="pdf-link-icon" target="_blank">
+              <img src="images/pdf.png" alt="PDF" class="project-icon">
+            </a>
+            <img src="images/project2-screenshot.png" alt="Project Screenshot" class="project-thumb">
+            <h3>Cloud Monitoring Dashboard (2025)</h3>
+            <button class="toggle-btn">View Details</button>
+          </div>
+          <div class="project-details">
+            <ul>
+              <li>Developed a cloud-based monitoring dashboard using Python and Flask.</li>
+              <li>Integrated real-time metrics and alerts for virtual machines and containers.</li>
+              <li>Implemented automated reporting with email notifications for system administrators.</li>
+            </ul>
+            <a href="#" target="_blank" class="pdf-link">Open PDF</a>
+          </div>
+        </div>
+      </section>
 
     <script src="js/script.js"></script>
 </body>

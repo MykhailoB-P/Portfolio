@@ -25,3 +25,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Show first page initially
     pages[currentPage].classList.add('active');
 });
+
+
+// Toggle project details on click
+document.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const details = btn.nextElementSibling;
+      details.classList.toggle('active');
+    });
+  });
+
+  
+// Toggle contact text on click (phone/Gmail)
+document.querySelectorAll('.contact-item .clickable').forEach(icon => {
+    icon.addEventListener('click', () => {
+      const parent = icon.parentElement;
+      parent.classList.toggle('active');
+    });
+  });
+  
