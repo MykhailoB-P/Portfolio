@@ -44,3 +44,50 @@ document.querySelectorAll('.contact-item .clickable').forEach(icon => {
     });
   });
   
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Interactive Category Filtering ("Folders")
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const filterValue = button.getAttribute('data-filter');
+
+            projectCards.forEach(card => {
+                // Reset CSS animation
+                card.style.animation = 'none';
+                card.offsetHeight; // Trigger reflow
+                card.style.animation = null;
+
+                if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    });
+
+    // 2. Fixed "View Details" Accordion Logic
+    const toggleButtons = document.querySelectorAll('.toggle-btn');
+
+    toggleButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Correctly find the parent project card instead of nextElementSibling
+            const projectCard = btn.closest('.project-card');
+            projectCard.classList.toggle('expanded');
+
+            // Toggle button text dynamically
+            if (projectCard.classList.contains('expanded')) {
+                btn.textContent = 'Hide Details';
+            } else {
+                btn.textContent = 'View Details';
+            }
+        });
+    });
+});
