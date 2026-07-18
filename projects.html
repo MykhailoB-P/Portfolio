@@ -3,63 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <title>Projects | Portfolio</title>
+    <!-- КРИТИЧЕСКИ ВАЖНО: сначала подключаем главный стиль, потом стиль проектов -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
-    <section class="projects-box" data-aos="fade-up">
-        <h2>My Projects</h2>
-      
-        <!-- Project 1: Real project -->
-        <div class="project">
-          <div class="project-header">
-            <a href="#" class="pdf-link-icon" target="_blank">
-              <img src="images/pdf.png" alt="PDF" class="project-icon">
-            </a>
-            <img src="images/project1-screenshot.png" alt="Project Screenshot" class="project-thumb">
-            <h3>Internet & Network Services Project (2024)</h3>
-            <button class="toggle-btn">View Details</button>
-          </div>
-          <div class="project-details">
-            <ul>
-              <li>Configured and secured Linux servers (Apache, MySQL, PHP) with SSH hardening, reducing vulnerability exposure by ~35%.</li>
-              <li>Built and deployed a Moodle web platform in a virtualised environment.</li>
-            </ul>
-            <a href="#" target="_blank" class="pdf-link">Open PDF</a>
-          </div>
-        </div>
-      
-        <!-- Project 2: Random example -->
-        <div class="project">
-          <div class="project-header">
-            <a href="#" class="pdf-link-icon" target="_blank">
-              <img src="images/pdf.png" alt="PDF" class="project-icon">
-            </a>
-            <img src="images/project2-screenshot.png" alt="Project Screenshot" class="project-thumb">
-            <h3>Cloud Monitoring Dashboard (2025)</h3>
-            <button class="toggle-btn">View Details</button>
-          </div>
-          <div class="project-details">
-            <ul>
-              <li>Developed a cloud-based monitoring dashboard using Python and Flask.</li>
-              <li>Integrated real-time metrics and alerts for virtual machines and containers.</li>
-              <li>Implemented automated reporting with email notifications for system administrators.</li>
-            </ul>
-            <a href="#" target="_blank" class="pdf-link">Open PDF</a>
-          </div>
-        </div>
-      </section>
+    <main class="projects-container">
+        <header class="projects-header" data-aos="fade-up">
+            <h2>My Projects</h2>
+            <p>Explore my practical work in cybersecurity, infrastructure, and software engineering.</p>
+        </header>
 
+        <!-- Interactive Filter Bar (The "Folders") -->
+        <div class="filter-bar" data-aos="fade-up">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="cybersecurity">Cybersecurity</button>
+            <button class="filter-btn" data-filter="software">Software Engineering</button>
+            <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <section class="projects-grid">
+            
+            <!-- Project 1: Infrastructure -->
+            <article class="project-card" data-category="infrastructure" data-aos="fade-up">
+                <div class="card-header">
+                    <span class="badge infrastructure">Infrastructure</span>
+                    <a href="#" class="pdf-link-icon" target="_blank" title="Download PDF Report">
+                        <span>PDF</span>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h3>Internet & Network Services (2024)</h3>
+                    <p class="summary">Linux server hardening and virtualised Moodle deployment.</p>
+                    
+                    <div class="project-details">
+                        <ul>
+                            <li>Configured and secured Apache, MySQL, and PHP servers with SSH hardening, reducing vulnerability exposure by ~35%.</li>
+                            <li>Built and deployed a resilient Moodle web platform inside a virtualised environment.</li>
+                        </ul>
+                        <a href="#" target="_blank" class="btn-pdf-full">Open Full PDF Report</a>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="toggle-btn">View Details</button>
+                </div>
+            </article>
+
+            <!-- Project 2: Software Engineering -->
+            <article class="project-card" data-category="software" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-header">
+                    <span class="badge software">Software Eng</span>
+                    <a href="#" class="pdf-link-icon" target="_blank" title="Download PDF Report">
+                        <span>PDF</span>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h3>Cloud Monitoring Dashboard (2025)</h3>
+                    <p class="summary">Real-time metrics tracking and automated Python reporting system.</p>
+                    
+                    <div class="project-details">
+                        <ul>
+                            <li>Developed a lightweight cloud monitoring dashboard using Python and Flask.</li>
+                            <li>Integrated real-time system metrics and custom alerts for virtual machines and containers.</li>
+                            <li>Implemented automated reporting with SMTP email notifications for system administrators.</li>
+                        </ul>
+                        <a href="#" target="_blank" class="btn-pdf-full">Open Full PDF Report</a>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="toggle-btn">View Details</button>
+                </div>
+            </article>
+
+            <!-- Project 3: Cybersecurity -->
+            <article class="project-card" data-category="cybersecurity" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-header">
+                    <span class="badge cybersecurity">Cybersecurity</span>
+                    <a href="#" class="pdf-link-icon" target="_blank" title="Download PDF Report">
+                        <span>PDF</span>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h3>Cyber Defense Monitor (2025)</h3>
+                    <p class="summary">Home network intrusion detection and unauthorized access logging.</p>
+                    
+                    <div class="project-details">
+                        <ul>
+                            <li>Engineered a custom monitoring script to track device security and log unauthorized network requests.</li>
+                            <li>Configured automated firewall rules using Bash and iptables to block suspicious IP ranges.</li>
+                        </ul>
+                        <a href="#" target="_blank" class="btn-pdf-full">Open Full PDF Report</a>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="toggle-btn">View Details</button>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
     <script src="js/script.js"></script>
 </body>
 </html>
