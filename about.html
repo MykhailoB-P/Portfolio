@@ -4,139 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Portfolio</title>
-
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/about.css">
-
-    <!-- AOS Animation CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Mykhailo Budonnyi</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <section class="about">
-        <h2 data-aos="fade-down">About Me</h2>
-        <div class="boxes">
+    <main class="container">
+        <header class="page-header" data-aos="fade-down">
+            <h2>About Me</h2>
+            <p>Background, skillsets, and administrative tools.</p>
+        </header>
+
+        <section class="boxes-grid">
             <!-- Box 1: What I Study -->
             <div class="box" data-aos="fade-up">
                 <h3>What I Study</h3>
                 <ul class="study-list">
                     <li>
                         <span class="icon">💻</span>
-                        IT support & troubleshooting (Windows/Linux, Microsoft 365)
+                        <span>IT support & troubleshooting (Windows/Linux, Microsoft 365)</span>
                     </li>
                     <li>
                         <span class="icon">🖥️</span>
-                        System administration & virtualisation (VMware, Active Directory)
+                        <span>System administration & virtualisation (VMware, Active Directory)</span>
                     </li>
                     <li>
                         <span class="icon">🔒</span>
-                        Cybersecurity fundamentals (firewalls, networking, security policies)
+                        <span>Cybersecurity fundamentals (firewalls, networking, security policies)</span>
                     </li>
                     <li>
                         <span class="icon">⚙️</span>
-                        Automation & scripting (Python, PowerShell, GitHub)
+                        <span>Automation & scripting (Python, PowerShell, GitHub)</span>
                     </li>
                 </ul>
             </div>
 
             <!-- Box 2: Tools -->
-<div class="box" data-aos="fade-up" data-aos-delay="100">
-    <h3>Tools I Use</h3>
-    <div class="icons-grid">
-        <div class="icon-item">
-            <img src="images/html.png" alt="HTML">
-            <span>HTML</span>
-        </div>
-        <div class="icon-item">
-            <img src="images/css.png" alt="CSS">
-            <span>CSS</span>
-        </div>
-        <div class="icon-item">
-            <img src="images/js.png" alt="JavaScript">
-            <span>JavaScript</span>
-        </div>
-        <div class="icon-item">
-            <img src="images/github.png" alt="GitHub">
-            <span>GitHub</span>
-        </div>
-        <div class="icon-item">
-            <img src="images/linux.png" alt="Linux">
-            <span>Linux</span>
-        </div>
-        <div class="icon-item">
-            <img src="images/windows.png" alt="Windows">
-            <span>Windows</span>
-        </div>
-        <div class="icon-item">
-            <img src="images/powershell.png" alt="PowerShell">
-            <span>PowerShell</span>
-        </div>
-        <div class="icon-item">
-            <img src="images/microsoft365.png" alt="Microsoft 365">
-            <span>Microsoft 365</span>
-        </div>
-        <div class="icon-item">
-            <img src="images/wireshark.png" alt="Wireshark">
-            <span>Wireshark</span>
-        </div>
-        <div class="icon-item">
-            <img src="images/cisco.png" alt="Cisco">
-            <span>Cisco</span>
-        </div>
-        <div class="icon-item">
-            <img src="images/putty.png" alt="PuTTY">
-            <span>PuTTY</span>
-        </div>
-        <div class="icon-item">
-            <img src="images/servicenow.png" alt="ServiceNow">
-            <span>ServiceNow</span>
-        </div>
-        <div class="icon-item">
-            <img src="images/vmware.png" alt="VMware">
-            <span>VMware</span>
-        </div>
-        <div class="icon-item">
-            <img src="images/python.png" alt="Python">
-            <span>Python</span>
-        </div>
-        <div class="icon-item">
-            <img src="images/sql.png" alt="SQL">
-            <span>SQL</span>
-        </div>
-        <div class="icon-item">
-            <img src="images/visual-paradigm.png" alt="Visual Paradigm">
-            <span>Visual Paradigm</span>
-        </div>
-        <div class="icon-item">
-            <img src="images/pdf.png" alt="Technical Documentation">
-            <span>Technical Documentation</span>
-        </div>
-    </div>
-</div>
-
-            <!-- Box 3: Projects -->
-            <div class="box" data-aos="fade-up" data-aos-delay="200">
-                <h3>Projects</h3>
-                <p>I have worked on several projects. <a href="projects.html">See them here</a>.</p>
+            <div class="box" data-aos="fade-up" data-aos-delay="100">
+                <h3>Tools I Use</h3>
+                <div class="icons-grid">
+                    <div class="icon-item"><img src="images/html.png" alt="HTML"><span>HTML</span></div>
+                    <div class="icon-item"><img src="images/css.png" alt="CSS"><span>CSS</span></div>
+                    <div class="icon-item"><img src="images/js.png" alt="JavaScript"><span>JavaScript</span></div>
+                    <div class="icon-item"><img src="images/github.png" alt="GitHub"><span>GitHub</span></div>
+                    <div class="icon-item"><img src="images/linux.png" alt="Linux"><span>Linux</span></div>
+                    <div class="icon-item"><img src="images/windows.png" alt="Windows"><span>Windows</span></div>
+                    <div class="icon-item"><img src="images/powershell.png" alt="PowerShell"><span>PowerShell</span></div>
+                    <div class="icon-item"><img src="images/microsoft365.png" alt="Microsoft 365"><span>M365</span></div>
+                    <div class="icon-item"><img src="images/wireshark.png" alt="Wireshark"><span>Wireshark</span></div>
+                    <div class="icon-item"><img src="images/cisco.png" alt="Cisco"><span>Cisco</span></div>
+                    <div class="icon-item"><img src="images/putty.png" alt="PuTTY"><span>PuTTY</span></div>
+                    <div class="icon-item"><img src="images/servicenow.png" alt="ServiceNow"><span>ServiceNow</span></div>
+                    <div class="icon-item"><img src="images/vmware.png" alt="VMware"><span>VMware</span></div>
+                    <div class="icon-item"><img src="images/python.png" alt="Python"><span>Python</span></div>
+                    <div class="icon-item"><img src="images/sql.png" alt="SQL"><span>SQL</span></div>
+                    <div class="icon-item"><img src="images/visual-paradigm.png" alt="Visual Paradigm"><span>Paradigm</span></div>
+                    <div class="icon-item"><img src="images/pdf.png" alt="Docs"><span>Docs</span></div>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- AOS Animation JS -->
+            <!-- Box 3: Projects Summary -->
+            <div class="box" data-aos="fade-up" data-aos-delay="200">
+                <h3>Practical Projects</h3>
+                <p>I build hands-on infrastructure and security environments to test concepts.</p>
+                <br>
+                <a href="projects.html" class="btn-primary">Explore Projects</a>
+            </div>
+        </section>
+    </main>
+
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        duration: 1000,
-        once: true
-      });
-    </script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
+    <script src="js/script.js"></script>
 </body>
 </html>

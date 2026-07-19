@@ -1,52 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Me</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
-  <section class="contact-box" data-aos="fade-up">
-    <h2>Contact Me</h2>
-
-    <div class="contact-grid">
-      <!-- Social Media Column -->
-      <div class="contact-column social">
-        <h3>Social</h3>
-        <a href="https://github.com/MykhailoB-P" target="_blank" class="contact-icon">
-          <img src="images/github.png" alt="GitHub">
-        </a>
-        <a href="https://www.linkedin.com/in/mykhailo-budonnyi-79399323a/" target="_blank" class="contact-icon">
-          <img src="images/linkedin.png" alt="LinkedIn">
-        </a>
-      </div>
-
-      <!-- Personal Contact Column -->
-      <div class="contact-column personal">
-        <h3>Contacts</h3>
-        <div class="contact-item">
-          <img src="images/phone.png" alt="Phone" class="contact-icon clickable">
-          <span class="contact-text">+353 123 456 789</span>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Mykhailo Budonnyi</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
         </div>
-        <div class="contact-item">
-          <img src="images/gmail.png" alt="Email" class="contact-icon clickable">
-          <span class="contact-text">mykhailo@example.com</span>
-        </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <script src="js/script.js"></script>
+    <main class="container contact-container">
+        <header class="page-header" data-aos="fade-down">
+            <h2>Contact Me</h2>
+            <p>Get in touch or connect on social networks.</p>
+        </header>
+
+        <section class="contact-box" data-aos="fade-up">
+            <div class="contact-grid">
+                <!-- Social Media Column -->
+                <div class="contact-column social">
+                    <h3>Social Profiles</h3>
+                    <a href="https://github.com/MykhailoB-P" target="_blank" class="contact-icon" title="GitHub">
+                        <img src="images/github.png" alt="GitHub">
+                    </a>
+                    <a href="https://www.linkedin.com/in/mykhailo-budonnyi-79399323a/" target="_blank" class="contact-icon" title="LinkedIn">
+                        <img src="images/linkedin.png" alt="LinkedIn">
+                    </a>
+                </div>
+
+                <!-- Personal Contact Column -->
+                <div class="contact-column personal">
+                    <h3>Direct Contacts</h3>
+                    <div class="contact-item">
+                        <img src="images/phone.png" alt="Phone" class="contact-icon clickable">
+                        <span class="contact-text">+353 123 456 789</span>
+                    </div>
+                    <div class="contact-item">
+                        <img src="images/gmail.png" alt="Email" class="contact-icon clickable">
+                        <span class="contact-text">mykhailo@example.com</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
+    <script src="js/script.js"></script>
 </body>
 </html>

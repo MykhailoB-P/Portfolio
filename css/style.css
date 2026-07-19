@@ -1,65 +1,517 @@
-/* Reset & basic */
+/* ==========================================================================
+   UNIFIED DESIGN SYSTEM & STYLESHEET
+   Portfolio for Mykhailo Budonnyi (IT Management & Cybersecurity)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. DESIGN TOKENS (Variables)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Color Palette */
+  --bg-main: #0f172a;         /* Deep slate background */
+  --bg-card: #1e293b;         /* Card / container surface */
+  --bg-nav: #1e293b;          /* Navigation bar background */
+  --border-color: #334155;    /* Subtle borders */
+  --border-hover: #475569;    /* Hover border state */
+  
+  --accent-primary: #38bdf8;  /* Sky blue accent */
+  --accent-secondary: #fab005;/* Gold / Amber accent */
+  --accent-hover: #7dd3fc;    /* Lighter blue hover */
+  
+  --text-main: #f8fafc;       /* Primary text color */
+  --text-muted: #94a3b8;      /* Muted secondary text */
+  --text-inverse: #0f172a;    /* Text on bright buttons */
+  
+  /* Typography */
+  --font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  
+  /* Spacing & Radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --transition: all 0.3s ease;
+}
+
+/* --------------------------------------------------------------------------
+   2. GLOBAL RESET & BASE STYLES
+   -------------------------------------------------------------------------- */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background: #f4f4f4;
-    color: #333;
+  font-family: var(--font-family);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Navigation */
-nav {
-    background: #222;
-    padding: 1rem;
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: var(--transition);
 }
 
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
+a:hover {
+  color: var(--accent-hover);
 }
 
-nav ul li {
-    margin: 0 1rem;
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
+/* Headings */
+h1, h2, h3, h4 {
+  color: var(--text-main);
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
+/* --------------------------------------------------------------------------
+   3. NAVIGATION HEADER
+   -------------------------------------------------------------------------- */
+.navbar {
+  background-color: var(--bg-nav);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* Sections */
-section {
-    padding: 4rem 2rem;
-    text-align: center;
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.logo:hover {
+  color: var(--accent-primary);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: var(--text-muted);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-link.active {
+  color: var(--accent-primary);
+  background: rgba(56, 189, 248, 0.1);
+  border-bottom: 2px solid var(--accent-primary);
+}
+
+/* --------------------------------------------------------------------------
+   4. BUTTONS & UI COMPONENTS
+   -------------------------------------------------------------------------- */
+.btn-primary, .btn-secondary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--accent-primary);
+  color: var(--text-inverse);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  color: var(--text-inverse);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   5. PAGE SECTIONS & CARDS
+   -------------------------------------------------------------------------- */
+/* Hero Section (Home) */
 .hero {
-    background: #007BFF;
-    color: #fff;
-    min-height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  padding: 4rem 1rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
+.hero h1 {
+  font-size: 2.75rem;
+  max-width: 800px;
+}
 
-    nav ul li {
-        margin: 0.5rem 0;
-    }
+.hero p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 600px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Page Header (About, Projects, Contact) */
+.page-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.page-header h2 {
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-header p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* Generic Box / Card */
+.box, .project-card, .contact-box {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  transition: var(--transition);
+}
+
+.box:hover, .project-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   6. ABOUT PAGE STYLES
+   -------------------------------------------------------------------------- */
+.boxes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.study-list {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.study-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+.study-list .icon {
+  font-size: 1.25rem;
+}
+
+/* Icon Grid (Tools I Use) */
+.icons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.icon-item img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  transition: var(--transition);
+}
+
+.icon-item img:hover {
+  transform: scale(1.25);
+}
+
+.icon-item span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   7. PROJECTS PAGE STYLES
+   -------------------------------------------------------------------------- */
+.filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  background: var(--bg-card);
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background: var(--accent-primary);
+  color: var(--text-inverse);
+  border-color: var(--accent-primary);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-card.hidden {
+  display: none;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+}
+
+.badge.cybersecurity { background: #ef4444; color: #fff; }
+.badge.software { background: #3b82f6; color: #fff; }
+.badge.infrastructure { background: #10b981; color: #fff; }
+
+.pdf-link-icon span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  text-decoration: underline;
+}
+
+.card-body h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.summary {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+/* Accordion expandable details */
+.project-details {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  border-top: 1px solid var(--border-color);
+}
+
+.project-card.expanded .project-details {
+  max-height: 400px;
+  opacity: 1;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.project-details ul {
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.project-details li {
+  margin-bottom: 0.4rem;
+}
+
+.btn-pdf-full {
+  display: inline-block;
+  background: var(--accent-primary);
+  color: var(--text-inverse);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.btn-pdf-full:hover {
+  background: var(--accent-hover);
+  color: var(--text-inverse);
+}
+
+.card-footer {
+  margin-top: 1.25rem;
+}
+
+.toggle-btn {
+  width: 100%;
+  background: var(--accent-secondary);
+  color: var(--text-inverse);
+  border: none;
+  padding: 0.6rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.toggle-btn:hover {
+  background: #ffd43b;
+}
+
+/* --------------------------------------------------------------------------
+   8. CONTACT PAGE STYLES
+   -------------------------------------------------------------------------- */
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-column {
+  flex: 1;
+  min-width: 250px;
+}
+
+.contact-column h3 {
+  margin-bottom: 1.25rem;
+  font-size: 1.2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.contact-icon {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  margin-right: 0.75rem;
+  transition: var(--transition);
+}
+
+.contact-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.contact-icon:hover {
+  transform: scale(1.2);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  cursor: pointer;
+}
+
+.contact-text {
+  display: none;
+  font-size: 0.95rem;
+  color: var(--accent-secondary);
+  font-weight: 600;
+}
+
+.contact-item.active .contact-text {
+  display: inline;
+}
+
+/* --------------------------------------------------------------------------
+   9. RESPONSIVE DESIGN (Media Queries)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .boxes-grid, .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }
