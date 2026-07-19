@@ -199,6 +199,82 @@ h1, h2, h3, h4 {
   margin-top: 1rem;
 }
 
+/* Home Page Story Section */
+.story-section {
+  padding: 4rem 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.story-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+  color: var(--accent-primary);
+}
+
+.story-text p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.story-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
+  object-fit: cover;
+}
+
+/* Pillars Grid */
+.pillars-section {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.pillar-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  text-align: left;
+  transition: var(--transition);
+}
+
+.pillar-card:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-4px);
+}
+
+.pillar-card .icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.pillar-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.pillar-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
 /* Page Header (About, Projects, Contact) */
 .page-header {
   text-align: center;
@@ -511,7 +587,7 @@ h1, h2, h3, h4 {
     width: 100%;
   }
   
-  .boxes-grid, .projects-grid {
+  .boxes-grid, .projects-grid, .story-grid {
     grid-template-columns: 1fr;
   }
 }
