@@ -570,7 +570,129 @@ h1, h2, h3, h4 {
 }
 
 /* --------------------------------------------------------------------------
-   9. RESPONSIVE DESIGN (Media Queries)
+   9. EXPERIENCE PAGE STYLES
+   -------------------------------------------------------------------------- */
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Minimalistic Experience Card */
+.experience-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  position: relative;
+  /* Smooth scale transition for hover zoom effect */
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Cursor Zoom Effect: Makes box slightly bigger on hover */
+.experience-card:hover {
+  transform: scale(1.03);
+  border-color: var(--accent-primary);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+/* Highest Priority Card Styling (IT MTU Desk) */
+.experience-card.priority-card {
+  border: 2px solid var(--accent-primary);
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+.experience-card.priority-card:hover {
+  border-color: var(--accent-hover);
+  box-shadow: 0 12px 30px rgba(56, 189, 248, 0.2);
+}
+
+/* Priority Badge */
+.priority-badge {
+  display: inline-block;
+  background-color: var(--accent-primary);
+  color: var(--text-inverse);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+/* Company & Role Header */
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.exp-role {
+  font-size: 1.3rem;
+  color: var(--text-main);
+}
+
+.exp-company {
+  font-size: 1rem;
+  color: var(--accent-primary);
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+.exp-duration {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px;
+}
+
+.exp-bullets {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  margin-bottom: 1.25rem;
+  color: var(--text-muted);
+}
+
+.exp-bullets li {
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+/* Skills Tags Container */
+.exp-skills {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border-color);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-pill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: 15px;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* When hovering over card, skills highlight clearly */
+.experience-card:hover .skill-pill {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+/* --------------------------------------------------------------------------
+   10. RESPONSIVE DESIGN (Media Queries)
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
   .nav-container {
@@ -587,7 +709,7 @@ h1, h2, h3, h4 {
     width: 100%;
   }
   
-  .boxes-grid, .projects-grid, .story-grid {
+  .boxes-grid, .projects-grid, .story-grid, .experience-grid {
     grid-template-columns: 1fr;
   }
 }
