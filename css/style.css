@@ -306,12 +306,75 @@ h1, h2, h3, h4 {
 }
 
 /* --------------------------------------------------------------------------
-   6. ABOUT PAGE STYLES
+   6. ABOUT PAGE STYLES & EXPANDABLE BOXES
    -------------------------------------------------------------------------- */
 .boxes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* Expandable Box Styles */
+.box.expandable-box {
+  cursor: pointer;
+  padding: 1.25rem 1.5rem;
+  user-select: none;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box.expandable-box:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.box-header h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-main);
+}
+
+.expand-icon {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  line-height: 1;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hidden Content by Default */
+.box-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  margin-top: 0;
+}
+
+/* Expanded State when Clicked */
+.box.expandable-box.expanded {
+  border-color: var(--accent-primary);
+  box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.15);
+}
+
+.box.expandable-box.expanded .expand-icon {
+  transform: rotate(45deg);
+  color: var(--accent-secondary);
+}
+
+.box.expandable-box.expanded .box-content {
+  max-height: 600px;
+  opacity: 1;
+  margin-top: 1rem;
 }
 
 .study-list {

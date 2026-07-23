@@ -1,6 +1,7 @@
 /* ==========================================================================
    PORTFOLIO INTERACTIVE SCRIPT
-   Handles project category filtering, accordion details, and contact toggles
+   Handles project category filtering, accordion details, contact toggles,
+   and expandable About page boxes.
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -66,6 +67,23 @@ document.addEventListener('DOMContentLoaded', () => {
         contactItems.forEach(item => {
             item.addEventListener('click', () => {
                 item.classList.toggle('active');
+            });
+        });
+    }
+
+    // ----------------------------------------------------------------------
+    // 4. ABOUT PAGE: Click Box to Expand / Collapse Details
+    // ----------------------------------------------------------------------
+    const expandableBoxes = document.querySelectorAll('.expandable-box');
+
+    if (expandableBoxes.length > 0) {
+        expandableBoxes.forEach(box => {
+            box.addEventListener('click', (e) => {
+                // If user clicks a link inside the box, do not toggle collapse state
+                if (e.target.tagName === 'A' || e.target.closest('a')) {
+                    return;
+                }
+                box.classList.toggle('expanded');
             });
         });
     }
